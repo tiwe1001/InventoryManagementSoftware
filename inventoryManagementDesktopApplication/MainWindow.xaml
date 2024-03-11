@@ -5,10 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:inventoryManagementDesktopApplication"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800"
+        WindowState="Maximized">
     <Grid>
         <Button
             x:Name="addArticleBtn"
-            Content="Click"/>
+            Content="Click"
+            Click="Btn_Click"/>
     </Grid>
 </Window>

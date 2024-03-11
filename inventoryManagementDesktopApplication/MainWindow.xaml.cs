@@ -24,5 +24,12 @@ namespace inventoryManagementDesktopApplication
         {
             InitializeComponent();
         }
+
+        private void Btn_Click(object sender, RoutedEventArgs e)
+        {
+            addArticleWindow addArticle = new addArticleWindow();
+
+            addArticle.Show();
+        }
     }
 }
