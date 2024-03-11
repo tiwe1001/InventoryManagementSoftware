@@ -55,11 +55,13 @@ namespace inventoryManagementDesktopApplication
                 Console.WriteLine("Connected!");
                 lblNotConnected.Visibility = Visibility.Hidden;
                 lblConnected.Visibility = Visibility.Visible;
-                
+                loginWrong.Visibility = Visibility.Hidden;
+
             }
             catch (Exception)
             {
                 conn.closeConnection();
+                loginWrong.Visibility = Visibility.Visible;
                 Console.WriteLine("Connection error!");
                 lblConnected.Visibility = Visibility.Hidden;
                 lblNotConnected.Visibility = Visibility.Visible;
@@ -72,6 +74,9 @@ namespace inventoryManagementDesktopApplication
             Console.WriteLine("Connection closed!");
             lblConnected.Visibility = Visibility.Hidden;
             lblNotConnected.Visibility = Visibility.Visible;
+            loginWrong.Visibility = Visibility.Hidden;
+            usernameInput.Text = "";
+            passwordInput.Password = "";
         }
 
         public string read()

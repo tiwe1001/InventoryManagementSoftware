@@ -73,6 +73,19 @@
             Width="235">
         </PasswordBox>
 
+        <TextBlock
+            x:Name="loginWrong"
+            Text="Invalid username or password"
+            FontSize="15"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Foreground="Red"
+            Visibility="Hidden"
+            Grid.Row="0"
+            Grid.Column="1"
+            Margin="61,217,0,0">
+        </TextBlock>
+
         <Button
             x:Name="connectBtn"
             Content="Connect"
