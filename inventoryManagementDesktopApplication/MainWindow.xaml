@@ -6,11 +6,37 @@
         xmlns:local="clr-namespace:inventoryManagementDesktopApplication"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800"
-        WindowState="Maximized">
+        Background="Beige">
     <Grid>
         <Button
             x:Name="addArticleBtn"
-            Content="Click"
-            Click="Btn_Click"/>
+            Content="New Article"
+            Click="Btn_Click"
+            Margin="677,378,29,25"/>
+
+        <Button
+            x:Name="connectBtn"
+            Content="Connect"
+            Click="btnConn_Click"
+            Margin="580,10,140,334"/>
+
+        <Button
+            x:Name="disconnectBtn"
+            Content="Disconnect"
+            Click="btnDisconn_Click"
+            Margin="677,10,43,334"/>
+
+        <TextBlock
+            x:Name="lblConnected"
+            Text="Connected"
+            FontSize="30"
+            Foreground="Green"
+            Margin="351,47,297,267"/>
+        <TextBlock
+            x:Name="lblNotConnected"
+            Text="No Connection"
+            FontSize="30"
+            Foreground="Red"
+            Margin="59,55,537,251"/>
     </Grid>
 </Window>

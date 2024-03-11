@@ -121,6 +121,7 @@
             <ComboBoxItem>Docking station</ComboBoxItem>
             <ComboBoxItem>All-in-One</ComboBoxItem>
             <ComboBoxItem>Mini PC</ComboBoxItem>
+            <ComboBoxItem>Smartphone</ComboBoxItem>
         </ComboBox>
 
         <TextBlock
