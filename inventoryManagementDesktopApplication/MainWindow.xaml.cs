@@ -20,8 +20,12 @@ namespace inventoryManagementDesktopApplication
     /// <summary>
     /// Interaktionslogik für MainWindow.xaml
     /// </summary>
+    /// 
     public partial class MainWindow : Window
     {
+        public string username;
+        public string password;
+
         DatabaseConnection conn = new DatabaseConnection();
 
         public MainWindow()
@@ -40,7 +44,9 @@ namespace inventoryManagementDesktopApplication
 
         private void btnConn_Click(object sender, RoutedEventArgs e)
         {
-
+            username = usernameInput.Text;
+            password = passwordInput.Password;
+            DatabaseConnection.read(username, password); // username and password to DatabaseConnector
 
             try
             {
@@ -66,6 +72,13 @@ namespace inventoryManagementDesktopApplication
             Console.WriteLine("Connection closed!");
             lblConnected.Visibility = Visibility.Hidden;
             lblNotConnected.Visibility = Visibility.Visible;
+        }
+
+        public string read()
+        {
+            username = usernameInput.Text;
+            Console.WriteLine(" Ausgabe: " + username);
+            return username;
         }
     }
 }
