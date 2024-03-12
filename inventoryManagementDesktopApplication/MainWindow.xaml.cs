@@ -26,6 +26,8 @@ namespace inventoryManagementDesktopApplication
         public string username;
         public string password;
 
+        inventoryWindow inventoryWindow = new inventoryWindow();
+
         DatabaseConnection conn = new DatabaseConnection();
 
         public MainWindow()
@@ -35,12 +37,14 @@ namespace inventoryManagementDesktopApplication
             lblNotConnected.Visibility = Visibility.Visible;
         }
 
+        
         private void Btn_Click(object sender, RoutedEventArgs e)
         {
             addArticleWindow addArticle = new addArticleWindow();
 
             addArticle.Show();
         }
+        
 
         private void btnConn_Click(object sender, RoutedEventArgs e)
         {
@@ -53,10 +57,21 @@ namespace inventoryManagementDesktopApplication
                 DatabaseConnection.dataSource();
                 conn.openConnection();
                 Console.WriteLine("Connected!");
+
                 lblNotConnected.Visibility = Visibility.Hidden;
                 lblConnected.Visibility = Visibility.Visible;
                 loginWrong.Visibility = Visibility.Hidden;
+                usernameInput.IsEnabled = false;
+                passwordInput.IsEnabled = false;
+                connectBtn.IsEnabled = false;
+                disconnectBtn.IsEnabled = true;
 
+                Console.WriteLine("Hallo 1111111");
+                
+                inventoryWindow = createInventoryWindow();
+                inventoryWindow.Show();
+
+                Console.WriteLine("Hallo 2222222");
             }
             catch (Exception)
             {
@@ -77,6 +92,12 @@ namespace inventoryManagementDesktopApplication
             loginWrong.Visibility = Visibility.Hidden;
             usernameInput.Text = "";
             passwordInput.Password = "";
+            usernameInput.IsEnabled = true;
+            passwordInput.IsEnabled = true;
+            connectBtn.IsEnabled = true;
+            disconnectBtn.IsEnabled = false;
+
+            inventoryWindow.Close();
         }
 
         public string read()
@@ -84,6 +105,13 @@ namespace inventoryManagementDesktopApplication
             username = usernameInput.Text;
             Console.WriteLine(" Ausgabe: " + username);
             return username;
+        }
+
+        public inventoryWindow createInventoryWindow()
+        {
+            inventoryWindow invWindow = new inventoryWindow();
+
+            return invWindow;
         }
     }
 }

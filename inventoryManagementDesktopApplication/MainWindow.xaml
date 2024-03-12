@@ -99,6 +99,7 @@
             Content="Disconnect"
             Grid.Row="1"
             Grid.Column="1"
+            IsEnabled="false"
             Click="btnDisconn_Click"
             Margin="178,0,123,74"/>
 
