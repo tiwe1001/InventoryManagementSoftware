@@ -9,15 +9,55 @@
         Background="Beige">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="200"></RowDefinition>
             <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="200"></RowDefinition>
+            <RowDefinition Height="5"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
-        
-        
-        <DataGrid
-            x:Name="dataTable"
-            Grid.Row="2"
-            ></DataGrid>
+
+        <TextBlock
+            Text="Inventory Management System"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            FontSize="30"
+            FontWeight="Bold">
+        </TextBlock>
+
+        <TextBlock
+            Text="brand:"
+            Grid.Row="1"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            FontSize="20"
+            FontWeight="Bold" Margin="10,10,0,0">
+        </TextBlock>
+        <TextBox
+            x:Name="brandSearch"
+            Grid.Row="1" Margin="84,10,684,160">
+        </TextBox>
+
+        <Button
+            x:Name="searchArticleBtn"
+            Content="Search Article"
+            Grid.Row="1"
+            Click="BtnSearchArticle_Click" Margin="122,153,684,10"/>
+
+        <Button
+            x:Name="addArticleBtn"
+            Content="Add Article"
+            Grid.Row="1"
+            Click="BtnAddArticle_Click" Margin="10,153,796,10"/>
+
+        <TextBlock
+            Grid.Row="2" Background="Gray"></TextBlock>
+
+        <Border Grid.Row="5" BorderBrush="Gray" BorderThickness="1" Margin="10">
+            <DataGrid
+                x:Name="dataTable"
+                Grid.Row="5">
+            </DataGrid>
+        </Border>
+
     </Grid>
 </Window>

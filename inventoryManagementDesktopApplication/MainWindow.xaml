@@ -16,11 +16,6 @@
             <ColumnDefinition Width="400"></ColumnDefinition>
             <ColumnDefinition Width="400"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <Button
-            x:Name="addArticleBtn"
-            Content="New Article"
-            Click="Btn_Click"
-            Margin="677,378,29,25"/>
 
         <TextBlock
             Text="Login"

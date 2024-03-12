@@ -37,15 +37,6 @@ namespace inventoryManagementDesktopApplication
             lblNotConnected.Visibility = Visibility.Visible;
         }
 
-        
-        private void Btn_Click(object sender, RoutedEventArgs e)
-        {
-            addArticleWindow addArticle = new addArticleWindow();
-
-            addArticle.Show();
-        }
-        
-
         private void btnConn_Click(object sender, RoutedEventArgs e)
         {
             username = usernameInput.Text;
@@ -66,12 +57,9 @@ namespace inventoryManagementDesktopApplication
                 connectBtn.IsEnabled = false;
                 disconnectBtn.IsEnabled = true;
 
-                Console.WriteLine("Hallo 1111111");
                 
                 inventoryWindow = createInventoryWindow();
                 inventoryWindow.Show();
-
-                Console.WriteLine("Hallo 2222222");
             }
             catch (Exception)
             {
@@ -87,6 +75,7 @@ namespace inventoryManagementDesktopApplication
         {
             conn.closeConnection();
             Console.WriteLine("Connection closed!");
+
             lblConnected.Visibility = Visibility.Hidden;
             lblNotConnected.Visibility = Visibility.Visible;
             loginWrong.Visibility = Visibility.Hidden;

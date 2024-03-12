@@ -1,4 +1,5 @@
-﻿using System;
+﻿using inventoryManagementDesktopApplication.database;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,24 @@ namespace inventoryManagementDesktopApplication
     /// </summary>
     public partial class inventoryWindow : Window
     {
+        public static string brand;
+
         public inventoryWindow()
         {
             InitializeComponent();
+        }
+
+        private void BtnAddArticle_Click(object sender, RoutedEventArgs e)
+        {
+            addArticleWindow addArticle = new addArticleWindow();
+
+            addArticle.Show();
+        }
+
+        private void BtnSearchArticle_Click(object sender, RoutedEventArgs e)
+        {
+            brand = brandSearch.Text;
+            DatabaseManager.readTableArticle();
         }
     }
 }
