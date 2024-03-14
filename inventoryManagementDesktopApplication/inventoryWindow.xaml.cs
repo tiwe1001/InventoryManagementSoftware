@@ -36,8 +36,12 @@ namespace inventoryManagementDesktopApplication
 
         private void BtnSearchArticle_Click(object sender, RoutedEventArgs e)
         {
+            dataTable.ItemsSource = null;
             brand = brandSearch.Text;
+            
             DatabaseManager.readTableArticle();
+
+            dataTable.ItemsSource = DatabaseManager.getProducts();
         }
     }
 }
