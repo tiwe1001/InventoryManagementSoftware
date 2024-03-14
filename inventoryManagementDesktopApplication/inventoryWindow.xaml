@@ -30,12 +30,51 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             FontSize="20"
-            FontWeight="Bold" Margin="10,10,0,0">
+            FontWeight="Bold" Margin="37,10,0,0">
         </TextBlock>
         <TextBox
             x:Name="brandSearch"
-            Grid.Row="1" Margin="84,10,684,160">
+            Grid.Row="1" Margin="122,8,646,162">
         </TextBox>
+
+        <TextBlock
+            Text="price:"
+            Grid.Row="1"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            FontSize="20"
+            FontWeight="Bold" Margin="46,50,0,0">
+        </TextBlock>
+        <TextBox
+            x:Name="priceSearch"
+            Grid.Row="1" Margin="122,50,646,120">
+        </TextBox>
+
+        <TextBlock
+            Text="category:"
+            Grid.Row="1"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            FontSize="20"
+            FontWeight="Bold" Margin="10,92,0,0">
+        </TextBlock>
+        <ComboBox
+            x:Name="categorySearch"
+            Text=""
+            Width="132"
+            Height="30"
+            Grid.Row="1"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            Background="White" Margin="122,92,646,78">
+            <ComboBoxItem>Select...</ComboBoxItem>
+            <ComboBoxItem>Monitor</ComboBoxItem>
+            <ComboBoxItem>Laptop</ComboBoxItem>
+            <ComboBoxItem>Docking station</ComboBoxItem>
+            <ComboBoxItem>All-in-One</ComboBoxItem>
+            <ComboBoxItem>Mini PC</ComboBoxItem>
+            <ComboBoxItem>Smartphone</ComboBoxItem>
+        </ComboBox>
 
         <Button
             x:Name="searchArticleBtn"

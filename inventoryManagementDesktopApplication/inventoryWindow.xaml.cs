@@ -21,10 +21,14 @@ namespace inventoryManagementDesktopApplication
     public partial class inventoryWindow : Window
     {
         public static string brand;
+        public static string price;
+        public static string category;
 
         public inventoryWindow()
         {
             InitializeComponent();
+
+            categorySearch.SelectedIndex = 0;
         }
 
         private void BtnAddArticle_Click(object sender, RoutedEventArgs e)
@@ -38,7 +42,17 @@ namespace inventoryManagementDesktopApplication
         {
             dataTable.ItemsSource = null;
             brand = brandSearch.Text;
-            
+            price = priceSearch.Text;
+
+            if (categorySearch.Text == "Select...")
+            {
+                category = "";
+            } else
+            {
+                category = categorySearch.Text;
+            }
+            Console.WriteLine("Der Inhalt von Category = " + category);
+
             DatabaseManager.readTableArticle();
 
             dataTable.ItemsSource = DatabaseManager.getProducts();

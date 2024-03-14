@@ -13,25 +13,25 @@ namespace inventoryManagementDesktopApplication.database
 {
     internal class DatabaseManager
     {
-        static string brand = "";
+        static string value = "";
+
         static List<Product> products = new List<Product>();
+
         public static void readTableArticle()
         {
             clearProductList();
 
-            if (!string.IsNullOrEmpty(inventoryWindow.brand))
-            {
-                brand = "WHERE brand = '" + inventoryWindow.brand + "'";
-            }
+            getSqlSearchCommand();
 
             try
             {
                 MySqlConnection connection = DatabaseConnection.connection;
                 string sql = "";
 
-                if (!string.IsNullOrEmpty(brand))
+                if (!string.IsNullOrEmpty(value))
                 {
-                    sql = "SELECT * FROM article " + brand;
+                    sql = "SELECT * FROM article " + value;
+                    Console.WriteLine(sql);
                 }
                 else
                 {
@@ -63,13 +63,44 @@ namespace inventoryManagementDesktopApplication.database
                     Console.WriteLine($"ID: {product.id}, Marke: {product.brand}, Name: {product.name}, Beschreibung: {product.description}, Kategorie: {product.category}, Menge: {product.quantity}, Preis: {product.price}, Datum: {product.date}");
                 }
                     rdr.Close();
-                    brand = "";
+                    value = "";
                     Console.WriteLine("--------------------------------------------------------------------------------------");
                 }
             catch
             {
                 Console.WriteLine("Datensätze konnten nicht gelesen werden");
             }
+        }
+
+        static void getSqlSearchCommand()
+        {
+            int count = 0;
+
+            if (!string.IsNullOrEmpty(inventoryWindow.brand))
+            {
+                value = "WHERE brand = '" + inventoryWindow.brand + "'";
+                count++;
+            }
+            if (count == 1 && !string.IsNullOrEmpty(inventoryWindow.price))
+            {
+                value += " AND price = " + inventoryWindow.price;
+            }
+            if (count == 0 && !string.IsNullOrEmpty(inventoryWindow.price))
+            {
+                value = "WHERE price = " + inventoryWindow.price;
+                count++;
+            }
+            if (count == 1 && !string.IsNullOrEmpty(inventoryWindow.category))
+            {
+                value += " AND category = '" + inventoryWindow.category + "'";
+                count++;
+            }
+            if (count == 0 && !string.IsNullOrEmpty(inventoryWindow.category))
+            {
+                value = "WHERE category = '" + inventoryWindow.category + "'";
+                count++;
+            }
+
         }
 
         public static List<Product> getProducts()
