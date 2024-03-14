@@ -9,11 +9,30 @@
         Height="500"
         Width="800"
         WindowStartupLocation="CenterScreen"
-        Background="Beige"
+        Background="#2E2E2E"
         ResizeMode="NoResize">
-    <Grid Margin="10">
+
+    <Window.Resources>
+        <Style TargetType="TextBox">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TextBox">
+                        <Border BorderBrush="{TemplateBinding BorderBrush}" 
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                Background="{TemplateBinding Background}" 
+                                CornerRadius="5">
+                            <ScrollViewer Margin="0" x:Name="PART_ContentHost"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="70"></RowDefinition>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="20"/>
             <RowDefinition Height="50"/>
             <RowDefinition Height="50"/>
             <RowDefinition Height="50"/>
@@ -26,25 +45,38 @@
             <ColumnDefinition Width="200"/>
             <ColumnDefinition Width="600"/>
         </Grid.ColumnDefinitions>
+        
+        <Image Source="\images\Logo_Finger_restored.jpeg"
+                   Grid.Row="0"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Center">
+        </Image>
+        <Image Source="\images\background.jpeg" Margin="117,0,483,0" Grid.ColumnSpan="2"></Image>
+        <Image Source="\images\background.jpeg" Margin="192,0,408,0" Grid.ColumnSpan="2"></Image>
+        <Image Source="\images\background.jpeg" Margin="427,0,-27,0" Grid.Column="1"></Image>
+        <Image Source="\images\background.jpeg" Margin="137,0,263,0" Grid.Column="1"></Image>
+        <Image Source="\images\background.jpeg" Margin="282,0,118,0" Grid.Column="1"></Image>
 
         <TextBlock
             Text="Add Article"
+            Foreground="#E2B007"
             Grid.Row="0"
             Grid.Column="1"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            FontSize="40"
+            FontSize="30"
             FontWeight="Bold"
             Margin="93,0,0,0">
 
         </TextBlock>
         <TextBlock
             Text="brand:"
-            Grid.Row="1"
+            Foreground="#E2B007"
+            Grid.Row="2"
             HorizontalAlignment="Right"
             VerticalAlignment="Center"
             FontSize="25"
-            FontWeight="Bold">
+            FontWeight="Medium">
         </TextBlock>
         <TextBox
             x:Name="brandInput"
@@ -52,21 +84,22 @@
             Height="26"
             Width="200"
             MaxLength="64"
-            Grid.Row="1"
+            Grid.Row="2"
             Grid.Column="1"
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
-            Background="White"
+            Background="LightGray"
             Margin="357,0,0,0">
         </TextBox>
 
         <TextBlock
             Text="name:"
-            Grid.Row="2"
+            Foreground="#E2B007"
+            Grid.Row="3"
             HorizontalAlignment="Right"
             VerticalAlignment="Center"
             FontSize="25"
-            FontWeight="Bold">
+            FontWeight="Medium">
         </TextBlock>
         <TextBox
             x:Name="nameInput"
@@ -74,21 +107,22 @@
             Height="26"
             Width="200"
             MaxLength="64"
-            Grid.Row="2"
+            Grid.Row="3"
             Grid.Column="1"
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
-            Background="White"
+            Background="LightGray"
             Margin="357,0,0,0">
         </TextBox>
 
         <TextBlock
             Text="description:"
-            Grid.Row="3"
+            Foreground="#E2B007"
+            Grid.Row="4"
             HorizontalAlignment="Right"
             VerticalAlignment="Center"
             FontSize="25"
-            FontWeight="Bold">
+            FontWeight="Medium">
         </TextBlock>
         <TextBox
             x:Name="descriptionInput"
@@ -96,32 +130,33 @@
             Height="26"
             Width="400"
             MaxLength="100"
-            Grid.Row="3"
+            Grid.Row="4"
             Grid.Column="1"
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
-            Background="White"
+            Background="LightGray"
             Margin="157,0,0,0">
         </TextBox>
 
         <TextBlock
+            Foreground="#E2B007"
             Text="category:"
-            Grid.Row="4"
+            Grid.Row="5"
             HorizontalAlignment="Right"
             VerticalAlignment="Center"
             FontSize="25"
-            FontWeight="Bold">
+            FontWeight="Medium">
         </TextBlock>
         <ComboBox
             x:Name="categoryInput"
             Text=""
             Height="26"
             Width="150"
-            Grid.Row="4"
+            Grid.Row="5"
             Grid.Column="1"
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
-            Background="White"
+            Background="LightGray"
             Margin="407,0,0,0">
             <ComboBoxItem>Monitor</ComboBoxItem>
             <ComboBoxItem>Laptop</ComboBoxItem>
@@ -133,61 +168,107 @@
 
         <TextBlock
             Text="quantity:"
-            Grid.Row="5"
+            Foreground="#E2B007"
+            Grid.Row="6"
             HorizontalAlignment="Right"
             VerticalAlignment="Center"
             FontSize="25"
-            FontWeight="Bold">
+            FontWeight="Medium">
         </TextBlock>
         <TextBox
             x:Name="quantityInput"
             Text=""
             Height="26"
             Width="50"
-            Grid.Row="5"
+            Grid.Row="6"
             Grid.Column="1"
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
-            Background="White"
+            Background="LightGray"
             Margin="507,0,0,0">
         </TextBox>
 
         <TextBlock
             Text="price:"
-            Grid.Row="6"
+            Foreground="#E2B007"
+            Grid.Row="7"
             HorizontalAlignment="Right"
             VerticalAlignment="Center"
             FontSize="25"
-            FontWeight="Bold">
+            FontWeight="Medium">
         </TextBlock>
         <TextBox
             x:Name="priceInput"
             Text=""
             Height="26"
             Width="100"
-            Grid.Row="6"
+            Grid.Row="7"
             Grid.Column="1"
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
-            Background="White"
+            Background="LightGray"
             Margin="457,0,0,0">
         </TextBox>
 
         <Button
             x:Name="applyBtn"
+            Foreground="White"
             Content="Apply"
-            Grid.Row="7"
+            Grid.Row="8"
             Grid.Column="1"
-            Margin="222,31,222,65"
+            Margin="333,32,132,64"
             Click="applyBtn_Click">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Background" Value="#E2B007"/>
+                    <Setter Property="Cursor" Value="Hand"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#FFC125"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Width="100" Height="30"
+                            CornerRadius="12"
+                            Background="{TemplateBinding Background}">
+                        <ContentPresenter VerticalAlignment="Center"
+                                          HorizontalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
         </Button>
         <Button
             x:Name="cancelBtn"
+            Foreground="White"
             Content="Cancel"
-            Grid.Row="7"
+            Grid.Row="8"
             Grid.Column="1"
-            Margin="401,30,43,65"
+            Margin="450,31,36,64"
             Click="cancelBtn_Click">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Background" Value="#8B7500"/>
+                    <Setter Property="Cursor" Value="Hand"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#8B751F"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Width="100" Height="30"
+                            CornerRadius="12"
+                            Background="{TemplateBinding Background}">
+                        <ContentPresenter VerticalAlignment="Center"
+                                          HorizontalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
         </Button>
     </Grid>
 </Window>

@@ -168,5 +168,8 @@
     <Resource Include="images\LogoRechteck_restored.jpeg" />
     <Resource Include="images\Logo_Finger_restored.jpeg" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\background.jpeg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
