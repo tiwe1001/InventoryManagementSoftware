@@ -5,7 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:inventoryManagementDesktopApplication"
         mc:Ignorable="d"
-        Title="inventoryWindow" Height="700" Width="900"
+        Title="inventoryWindow"
+        Height="700"
+        Width="900"
         Background="Beige">
     <Grid>
         <Grid.RowDefinitions>
@@ -30,11 +32,13 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             FontSize="20"
-            FontWeight="Bold" Margin="37,10,0,0">
+            FontWeight="Bold"
+            Margin="37,10,0,0">
         </TextBlock>
         <TextBox
             x:Name="brandSearch"
-            Grid.Row="1" Margin="122,8,646,162">
+            Grid.Row="1"
+            Margin="122,8,646,162">
         </TextBox>
 
         <TextBlock
@@ -43,11 +47,13 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             FontSize="20"
-            FontWeight="Bold" Margin="46,50,0,0">
+            FontWeight="Bold"
+            Margin="46,50,0,0">
         </TextBlock>
         <TextBox
             x:Name="priceSearch"
-            Grid.Row="1" Margin="122,50,646,120">
+            Grid.Row="1"
+            Margin="122,50,646,120">
         </TextBox>
 
         <TextBlock
@@ -56,7 +62,8 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             FontSize="20"
-            FontWeight="Bold" Margin="10,92,0,0">
+            FontWeight="Bold"
+            Margin="10,92,0,0">
         </TextBlock>
         <ComboBox
             x:Name="categorySearch"
@@ -66,7 +73,8 @@
             Grid.Row="1"
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
-            Background="White" Margin="122,92,646,78">
+            Background="White"
+            Margin="122,92,646,78">
             <ComboBoxItem>Select...</ComboBoxItem>
             <ComboBoxItem>Monitor</ComboBoxItem>
             <ComboBoxItem>Laptop</ComboBoxItem>
@@ -80,21 +88,28 @@
             x:Name="searchArticleBtn"
             Content="Search Article"
             Grid.Row="1"
-            Click="BtnSearchArticle_Click" Margin="122,153,684,10"/>
+            Click="BtnSearchArticle_Click"
+            Margin="122,153,684,10"/>
 
         <Button
             x:Name="addArticleBtn"
             Content="Add Article"
             Grid.Row="1"
-            Click="BtnAddArticle_Click" Margin="10,153,796,10"/>
+            Click="BtnAddArticle_Click"
+            Margin="10,153,796,10"/>
 
         <TextBlock
             Grid.Row="2" Background="Gray"></TextBlock>
 
-        <Border Grid.Row="5" BorderBrush="Gray" BorderThickness="1" Margin="10">
+        <Border Grid.Row="5"
+                BorderBrush="Gray"
+                BorderThickness="1"
+                Margin="10">
             <DataGrid
                 x:Name="dataTable"
                 AutoGenerateColumns="True"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch"
                 Grid.Row="5">
             </DataGrid>
         </Border>

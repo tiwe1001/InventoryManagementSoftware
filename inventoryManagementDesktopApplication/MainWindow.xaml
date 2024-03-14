@@ -5,118 +5,215 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:inventoryManagementDesktopApplication"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800"
-        Background="Beige">
+        Title="Login"
+        Height="380"
+        Width="500"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        Background="#2E2E2E">
+
+    <Window.Resources>
+        <Style TargetType="TextBox">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TextBox">
+                        <Border BorderBrush="{TemplateBinding BorderBrush}" 
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                Background="{TemplateBinding Background}" 
+                                CornerRadius="5">
+                            <ScrollViewer Margin="0" x:Name="PART_ContentHost"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="PasswordBox">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="PasswordBox">
+                        <Border BorderBrush="{TemplateBinding BorderBrush}" 
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                Background="{TemplateBinding Background}" 
+                                CornerRadius="5">
+                            <ScrollViewer Margin="0" x:Name="PART_ContentHost"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
             <RowDefinition Height="300"></RowDefinition>
-            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="400"></ColumnDefinition>
-            <ColumnDefinition Width="400"></ColumnDefinition>
+            <ColumnDefinition Width="250"></ColumnDefinition>
+            <ColumnDefinition Width="250"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <TextBlock
+        <Grid Background="#242424"
+              Grid.ColumnSpan="2">
+
+            <Image Source="\images\Logo_Finger_restored.jpeg"
+                   Grid.Row="0"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Center"
+                   ></Image>
+
+            <TextBlock
             Text="Login"
+            Foreground="#E2B007"
             Grid.Row="0"
-            Grid.Column="0"
-            HorizontalAlignment="Left"
+            HorizontalAlignment="Center"
             VerticalAlignment="Top"
             FontSize="40"
-            FontWeight="Bold" Margin="347,10,0,0" Grid.ColumnSpan="2">
-        </TextBlock>
+            FontWeight="Bold"
+            Margin="0,-5,0,0"/>
+        </Grid>
 
         <TextBlock
             Text="Username:"
-            Grid.Row="0"
+            Foreground="#E2B007"
+            Grid.Row="1"
             Grid.Column="0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            FontSize="30"
-            FontWeight="Bold" Margin="200,110,0,0">
-        </TextBlock>
+            FontSize="15"
+            FontWeight="Bold"
+            Margin="173,50,0,0"/>
         <TextBox
             x:Name="usernameInput"
-            Grid.Row="0"
-            Grid.Column="1"
+            Background="LightGray"
+            Grid.Row="1"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            FlowDirection="RightToLeft"
-            Margin="42,116,0,0"
-            Height="34"
-            Width="235">
+            FlowDirection="LeftToRight"
+            Margin="173,75,0,0"
+            Height="23"
+            Width="154" Grid.ColumnSpan="2">
+
         </TextBox>
         <TextBlock
             Text="Password:"
-            Grid.Row="0"
+            Foreground="#E2B007"
+            Grid.Row="1"
             Grid.Column="0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            FontSize="30"
-            FontWeight="Bold" Margin="208,170,0,0">
+            FontSize="15"
+            FontWeight="Bold"
+            Margin="175,112,0,0">
         </TextBlock>
         <PasswordBox
             x:Name="passwordInput"
-            Grid.Row="0"
-            Grid.Column="1"
+            Background="LightGray"
+            Grid.Row="1"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            FlowDirection="RightToLeft"
-            Margin="42,176,0,0"
-            Height="34"
-            Width="235">
+            FlowDirection="LeftToRight"
+            Margin="173,137,0,0"
+            Height="22"
+            Width="154" Grid.ColumnSpan="2">
         </PasswordBox>
 
         <TextBlock
             x:Name="loginWrong"
             Text="Invalid username or password"
-            FontSize="15"
+            FontSize="10"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Foreground="Red"
             Visibility="Hidden"
-            Grid.Row="0"
-            Grid.Column="1"
-            Margin="61,217,0,0">
-        </TextBlock>
+            Grid.Row="1" Grid.ColumnSpan="2" Margin="184,173,0,0"/>
 
         <Button
             x:Name="connectBtn"
-            Content="Connect"
+            Content="Login"
+            Foreground="White"
+            FontWeight="Medium"
             Grid.Row="1"
-            Grid.Column="1"
             Click="btnConn_Click"
-            Margin="0,0,264,74"/>
+            Margin="173,224,5,50">
+
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Background" Value="#E2B007"/>
+                    <Setter Property="Cursor" Value="Hand"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#FFC125"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Width="67" Height="25"
+                            CornerRadius="12"
+                            Background="{TemplateBinding Background}">
+                        <ContentPresenter VerticalAlignment="Center"
+                                          HorizontalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
 
         <Button
             x:Name="disconnectBtn"
-            Content="Disconnect"
+            Content="Logout"
+            Foreground="White"
+            FontWeight="Medium"
             Grid.Row="1"
             Grid.Column="1"
             IsEnabled="false"
             Click="btnDisconn_Click"
-            Margin="178,0,123,74"/>
+            Margin="5,224,173,50">
+
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Background" Value="#8B7500"/>
+                    <Setter Property="Cursor" Value="Hand"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#8B751F"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Width="67" Height="25"
+                CornerRadius="12"
+                Background="{TemplateBinding Background}">
+                        <ContentPresenter VerticalAlignment="Center"
+                              HorizontalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
 
         <TextBlock
             x:Name="lblConnected"
             Text="Connected"
             Grid.Row="1"
-            Grid.Column="1"
-            FontSize="15"
+            FontSize="10"
+            FontWeight="Medium"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Foreground="Green"
-            Margin="32,34,0,0"/>
+            Margin="226,268,0,0" Grid.ColumnSpan="2"/>
         <TextBlock
             x:Name="lblNotConnected"
             Text="No Connection"
             Grid.Row="1"
-            Grid.Column="1"
-            FontSize="15"
+            FontSize="10"
+            FontWeight="Medium"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Foreground="Red"
-            Margin="18,34,0,0"/>
+            Margin="216,268,0,0" Grid.ColumnSpan="2"/>
     </Grid>
 </Window>

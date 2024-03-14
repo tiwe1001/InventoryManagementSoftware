@@ -28,15 +28,9 @@ namespace inventoryManagementDesktopApplication.database
                 MySqlConnection connection = DatabaseConnection.connection;
                 string sql = "";
 
-                if (!string.IsNullOrEmpty(value))
-                {
                     sql = "SELECT * FROM article " + value;
                     Console.WriteLine(sql);
-                }
-                else
-                {
-                    sql = "SELECT * FROM article";
-                }
+
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
 
 

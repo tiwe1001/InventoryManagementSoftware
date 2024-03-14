@@ -5,7 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:inventoryManagementDesktopApplication"
         mc:Ignorable="d"
-        Title="Add Article" Height="500" Width="800"
+        Title="Add Article"
+        Height="500"
+        Width="800"
         WindowStartupLocation="CenterScreen"
         Background="Beige"
         ResizeMode="NoResize">
@@ -32,7 +34,8 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             FontSize="40"
-            FontWeight="Bold" Margin="93,0,0,0">
+            FontWeight="Bold"
+            Margin="93,0,0,0">
 
         </TextBlock>
         <TextBlock
@@ -53,7 +56,8 @@
             Grid.Column="1"
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
-            Background="White" Margin="357,0,0,0">
+            Background="White"
+            Margin="357,0,0,0">
         </TextBox>
 
         <TextBlock
@@ -74,7 +78,8 @@
             Grid.Column="1"
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
-            Background="White" Margin="357,0,0,0">
+            Background="White"
+            Margin="357,0,0,0">
         </TextBox>
 
         <TextBlock
@@ -95,7 +100,8 @@
             Grid.Column="1"
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
-            Background="White" Margin="157,0,0,0">
+            Background="White"
+            Margin="157,0,0,0">
         </TextBox>
 
         <TextBlock
@@ -115,7 +121,8 @@
             Grid.Column="1"
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
-            Background="White" Margin="407,0,0,0">
+            Background="White"
+            Margin="407,0,0,0">
             <ComboBoxItem>Monitor</ComboBoxItem>
             <ComboBoxItem>Laptop</ComboBoxItem>
             <ComboBoxItem>Docking station</ComboBoxItem>
@@ -141,7 +148,8 @@
             Grid.Column="1"
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
-            Background="White" Margin="507,0,0,0">
+            Background="White"
+            Margin="507,0,0,0">
         </TextBox>
 
         <TextBlock
@@ -161,7 +169,8 @@
             Grid.Column="1"
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
-            Background="White" Margin="457,0,0,0">
+            Background="White"
+            Margin="457,0,0,0">
         </TextBox>
 
         <Button
